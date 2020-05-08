@@ -1,0 +1,72 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import processing.core.PApplet;
+
+public class Main extends PApplet {
+	ArrayList <Cuadro> cuadros;
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PApplet.main("main.Main");
+
+	}
+	public void settings() {
+		size(600,400);
+	}
+	
+	public void setup() {
+		cuadros= new ArrayList <Cuadro>();
+
+	}
+	
+	public void draw() {
+		for (int i=0; i<30;i++) {
+			for (int j=0; j<20;j++) {
+			
+		// con este if controlo que el impar lo pinte en blanco, y cada par negro
+			 if(i % 2 == 0 && j % 2 == 0) {
+		            fill(255);
+
+
+		        }   else {
+                    fill(0);
+                }
+                if((i % 2!=0)& j % 2!=0 )  {
+                    fill(255);
+                }
+                
+                
+                Cuadro cuadrito = new Cuadro(0+(600/30)*i,0+(600/30)*j,20,this);
+                
+                //pinto el cuadro
+    			cuadrito.pintar();
+    			
+    			new Thread (cuadrito.get(i)).start();
+    	
+
+		}
+		}
+}
+	
+	public void mousePressed() {
+		for (int i=0; i<30;i++) {
+			for (int j=0; j<20;j++) {
+				
+				 Cuadro cuadrito = new Cuadro(0+(600/30)*i,0+(600/30)*j,20,this);
+				 
+				 
+				// Aca intentaba mover los cuadros negro :(
+   			 if(j % 2 == 0) {
+   				 cuadrito.mover(); 
+   			 }
+				
+				
+			}
+			}
+		
+	}
+}

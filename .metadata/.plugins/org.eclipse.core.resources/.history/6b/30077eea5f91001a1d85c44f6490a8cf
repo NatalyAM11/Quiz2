@@ -1,0 +1,26 @@
+package main;
+
+import processing.core.PApplet;
+
+public class Cuadro implements Runnable{
+private int posX, posY, tam;
+private int r,g,b;
+PApplet app;
+
+	public Cuadro (int posX, int posY, int tam, PApplet app) {
+		this.posX=posX;
+		this.posY=posY;
+		this.tam=tam;
+		this.app=app;
+		
+	}
+	
+	
+	
+	
+	public void run() {
+		
+		
+	}
+
+}

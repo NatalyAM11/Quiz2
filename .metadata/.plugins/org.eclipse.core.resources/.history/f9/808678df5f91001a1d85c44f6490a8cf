@@ -1,0 +1,19 @@
+package main;
+
+public class Cuadro implements Runnable{
+private int posX, posY, tam;
+private int r,g,b;
+
+	public Cuadro () {
+		
+	}
+	
+	
+	
+	
+	public void run() {
+		
+		
+	}
+
+}
